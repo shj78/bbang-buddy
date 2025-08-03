@@ -40,15 +40,23 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
 
+        // Authorization 요청 헤더에서 JWT Bearer 토큰을 추출
         String token = resolveToken(request);
 
+        //유효한 경우
         if (StringUtils.hasText(token)) {
             String userId = jwtUtil.getUserIdFromToken(token);
 
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userId, null, null);
+            //Spring Security 인증 객체 생성
+            UsernamePasswordAuthenticationToken authentication =
 
+                    //userId가 Authentication 객체의 principal로 사용되며, 비밀번호는 null로 설정
+                    new UsernamePasswordAuthenticationToken(userId, null, null);
+
+            // 클라이언트의 IP 주소와 HTTP 세션 ID를 포함한 정보를 인증객체에 셋팅
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
+            // SecurityContextHolder에 인증 정보 저장
             SecurityContextHolder.getContext().setAuthentication(authentication);
             request.setAttribute("userId", userId);
             log.info("JWT 인증 성공: {}", authentication.getName());
@@ -83,6 +91,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String path = request.getServletPath();
         return path.startsWith("/api/auth/") || path.equals("/api/pot/search") || path.equals("/api/pot/near") || path.equals("/api/pot") ||
                path.startsWith("/h2-console/");
+//               path.startsWith("/h2-console/") || path.equals("/api/user/me");
     }
 
 }
