@@ -84,6 +84,12 @@ dependencies {
 
     // WebFlux
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // Oracle JDBC and PKI libraries
+    implementation files('libs/ojdbc8.jar')
+    implementation files('libs/oraclepki.jar')
+    implementation files('libs/osdt_core.jar')
+    implementation files('libs/osdt_cert.jar')
 }
 
 def querydslDir = "$buildDir/generated/querydsl"
