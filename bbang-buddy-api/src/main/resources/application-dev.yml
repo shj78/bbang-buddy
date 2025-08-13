@@ -1,0 +1,65 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:testdb;MODE=Oracle # In-memory database로 콘솔에서는 뜨나, 인텔리제이 DB툴에서는 안뜸
+#    url: jdbc:h2:file:~/testdb;MODE=Oracle # 인텔리제이 구동만 됨, DB툴에서 접속시 "Database connection failed" 에러 발생 - 동시접속불가
+    url: jdbc:h2:tcp://localhost:9093/~/testdb;MODE=Oracle
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+    tcp:
+      port: 9093
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema_origin.sql
+      data-locations: classpath:data_origin.sql
+      separator: ^
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+firebase:
+  config-path: /Users/deepsea/Documents/study/project/bbang-buddy/config/firebase-adminsdk.json
+
+pot:
+  image:
+    upload:
+      #path: ${user.dir}/uploads/potimages
+      #path: /Users/deepsea/Documents/study/project/bbang-buddy-api/bbang-buddy-api/uploads/potimages
+      path: /Users/deepsea/Documents/study/project/bbang-buddy-ui/public
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql: trace
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+
+jwt:
+  secret: ZOzaIiOyvlTtZN++0W5ZirvA7n8NXzCkIVodGL4tMRbIj77tioO3CIJhM84yHrjDqmUr+yxcTsSw6JQtwxaDgg==
+  token-validity-in-seconds: 3600
+  refresh-token-validity-in-seconds: 604800
+  expiration: 86400000 # 24 hours
+
+telegram:
+  bot:
+    token: ${TELEGRAM_BOT_TOKEN}
+    chat-id: ${TELEGRAM_CHAT_ID}
