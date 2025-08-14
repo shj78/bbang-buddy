@@ -18,26 +18,27 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Table(name = "notification")
+@Table(name = "NOTIFICATION")
 public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "TITLE")
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "USER_ID")
     private String userId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "MESSAGE")
     private String message;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name="CREATED_AT")
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
-    private boolean isRead = false;
+    @Column(nullable = false, name="IS_READ")
+    private boolean isRead;
 
     @PrePersist
     protected void onCreate() {
