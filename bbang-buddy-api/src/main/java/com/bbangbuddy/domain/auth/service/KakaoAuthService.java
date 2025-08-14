@@ -107,7 +107,7 @@ public class KakaoAuthService {
                 .email(userInfo.getKakaoAccount().getEmail())
                 .nickname(userInfo.getKakaoAccount().getProfile().getNickname())
                 .profileImage(userInfo.getKakaoAccount().getProfile().getProfileImageUrl())
-                .userId("kakao_" + userInfo.getId())
+                .userId(String.valueOf(userInfo.getId()))
                 .provider(userAndJwtToken.getUser().getProvider())
                 .createdAt(userAndJwtToken.getUser().getCreatedAt())
                 .build();

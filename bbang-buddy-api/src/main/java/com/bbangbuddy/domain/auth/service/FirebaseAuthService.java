@@ -72,7 +72,7 @@ public class FirebaseAuthService {
 //                .orElseThrow(() -> new RuntimeException("기본 역할이 존재하지 않습니다. ID: " + 1L));
 
         SignUpRequest signUpRequest = SignUpRequest.builder()
-                .userId("firebase_" + uid)
+                .userId(uid)
                 .username(nickname)
                 .email(email)
                 .password("oauth") // Firebase UID를 비밀번호 해시로 사용
