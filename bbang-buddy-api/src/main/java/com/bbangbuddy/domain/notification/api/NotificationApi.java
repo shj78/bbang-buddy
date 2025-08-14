@@ -37,7 +37,7 @@ public class NotificationApi {
      * @param token 사용자 토큰
      * @return SseEmitter 객체
      */
-    @CrossOrigin(origins = {"http://localhost:3000", "http://158.180.88.31:3000"})
+    @CrossOrigin(origins = {"http://localhost:3000", "http://158.180.88.31:3000", "http://bbangbuddy.com"})
     @GetMapping("/subscribe")
     public SseEmitter subscribe(@RequestParam("token") String token, HttpServletResponse response) {
         response.setHeader("X-Accel-Buffering", "no");
@@ -48,7 +48,7 @@ public class NotificationApi {
      * 알림을 전송하는 엔드포인트
      * @param request 알림 전송 요청
      */
-    @CrossOrigin(origins = {"http://localhost:3000", "http://158.180.88.31:3000"})
+    @CrossOrigin(origins = {"http://localhost:3000", "http://158.180.88.31:3000", "http://bbangbuddy.com"})
     @PostMapping("/send")
     public void send(@Valid @RequestBody NotificationRequestDto request) {
         notificationService.send(request.getUserId(), request.getMessage());

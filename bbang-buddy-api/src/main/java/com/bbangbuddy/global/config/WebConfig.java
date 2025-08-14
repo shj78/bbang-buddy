@@ -20,7 +20,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:3000", "http://158.180.88.31:3000", "http://158.180.88.31")
+                .allowedOrigins("http://localhost:3000", "http://158.180.88.31:3000", "http://158.180.88.31", "http://bbangbuddy.com")
                 .allowedMethods("GET", "POST")
                 .allowCredentials(true);
     }
