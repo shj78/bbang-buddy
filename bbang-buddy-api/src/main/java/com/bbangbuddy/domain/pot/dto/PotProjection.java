@@ -28,6 +28,7 @@ public interface PotProjection {
     LocalDateTime getCreatedAt();
     LocalDateTime getUpdatedAt();
     String getAddress();
+    String getChatRoomUrl();
 
 }
 

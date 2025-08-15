@@ -37,6 +37,7 @@ public class PotDto {
         private MultipartFile image;
         private String imagePath;
         private String originalFileName;
+        private String chatRoomUrl;
         private User createdAt;
         private LocalDateTime updatedAt;
         private Long createdBy;
@@ -83,6 +84,7 @@ public class PotDto {
         private LocalDateTime dueDate;
         private String imagePath;
         private String originalFileName;
+        private String chatRoomUrl;
         private Long createdBy;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
@@ -100,6 +102,7 @@ public class PotDto {
                     .dueDate(pot.getDueDate())
                     .imagePath(pot.getImagePath())
                     .originalFileName(pot.getOriginalFileName())
+                    .chatRoomUrl(pot.getChatRoomUrl())
                     .createdBy(pot.getCreatedBy())
                     .createdAt(pot.getCreatedAt())
                     .updatedAt(pot.getUpdatedAt())
@@ -118,6 +121,7 @@ public class PotDto {
                     .dueDate(projection.getDueDate())
                     .imagePath(projection.getImagePath())
                     .originalFileName(projection.getOriginalFileName())
+                    .chatRoomUrl(projection.getChatRoomUrl())
                     .createdBy(projection.getCreatedBy())
                     .createdAt(projection.getCreatedAt())
                     .updatedAt(projection.getUpdatedAt())

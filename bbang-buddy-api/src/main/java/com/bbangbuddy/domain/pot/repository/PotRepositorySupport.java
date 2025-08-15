@@ -37,6 +37,7 @@ public class PotRepositorySupport {
             pot.imagePath,
             pot.originalFileName,
             pot.dueDate,
+            pot.chatRoomUrl,
             pot.createdBy,
             pot.createdAt,
             pot.updatedAt,

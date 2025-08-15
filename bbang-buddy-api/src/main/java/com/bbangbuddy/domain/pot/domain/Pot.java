@@ -60,6 +60,9 @@ public class Pot {
     @Column(name = "ORIGINAL_FILE_NAME")
     private String originalFileName;
 
+    @Column(name = "CHAT_ROOM_URL")
+    private String chatRoomUrl;
+
     //여러개의 팟이 한 유저에 할당 가능
     @Column(name = "CREATED_BY", nullable = false)
     private Long createdBy;
