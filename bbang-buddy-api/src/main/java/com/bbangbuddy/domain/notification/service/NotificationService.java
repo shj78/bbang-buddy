@@ -79,7 +79,7 @@ public class NotificationService {
      * @param token 사용자 토큰
      * @return SseEmitter 객체
      */
-    @CrossOrigin(origins = {"http://localhost:3000", "http://158.180.88.31:3000", "http://bbangbuddy.com"})
+    @CrossOrigin(origins = {"http://localhost:3000", "http://158.180.88.31:3000", "http://bbangbuddy.com", "https://158.180.88.31:3000", "https://bbangbuddy.com"})
     public SseEmitter subscribe(String token) {
         String userId = jwtUtil.getUserIdFromToken(token);
         log.info("🛰️ 구독 요청됨 userId = " + userId);
