@@ -4,7 +4,7 @@
 <hr>
 
 <h4 align="center">
-  <a href="https://bbang-buddy.com">Home</a>
+  <a href="https://bbangbuddy.com">Home</a>
 </h4>
 <div align="center">
   <p>
