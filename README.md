@@ -59,14 +59,15 @@ BBangBuddy는 지역 기반 N빵 구매 서비스로, <br>
 ## 🛠️ 기술 스택
 
 ### **Frontend**
-- **Framework**: Next.js 15.3.3 (App Router)
-- **Language**: TypeScript 5.x
-- **UI Library**: Material-UI 7.x, Emotion
+- **Framework**: Next.js 15
+- **Language**: TypeScript 
+- **UI Library**: React 19
 - **State Management**: 
-  - Zustand 5.x (클라이언트 상태)
-  - TanStack Query 5.x (서버 상태)
+  - Zustand 
+  - TanStack Query 
 - **Maps**: Naver Maps API, Kakao Maps API
-- **Styling**: CSS Modules, Emotion styled-components
+- Alarm: SSE
+- **Styling**: CSS Modules, Material-UI 
 
 ### **Infrastructure & Monitoring**
 - **Error Tracking**: Sentry
@@ -75,7 +76,7 @@ BBangBuddy는 지역 기반 N빵 구매 서비스로, <br>
 - **Package Manager**: pnpm
 
 ### **Development Tools**
-- **Linting**: ESLint, TypeScript ESLint
+- **Linting**: ESLint
 - **Date Handling**: date-fns, dayjs
 - **HTTP Client**: Axios
 - **Toast Notifications**: Sonner
