@@ -75,7 +75,7 @@
 
 ##### 해결
 
-Naver Map + Kakao Map API
+**Naver Map + Kakao Map API**
 
 - 대중적인 Naver Map을 이용해 지도 및 위치 기반 UI 구현
 - Naver Map에서 위도·경도로 주소 변환이 제한된 부분은 Kakao Map API로 보완
