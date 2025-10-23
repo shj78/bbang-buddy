@@ -51,11 +51,10 @@
 <br>
 
 ### 1. 데모 영상
-
-![수동위치선택](https://github.com/user-attachments/assets/54bb012a-5bcb-4a58-b9bd-038d8e0eef4e)
-![팟참여](https://github.com/user-attachments/assets/1a61c396-5261-49b9-bf31-e4d7321c13f8)
-![나의팟](https://github.com/user-attachments/assets/3e647cde-8d30-4b5c-bc23-6ebbd1597676)
-![채팅방연동](https://github.com/user-attachments/assets/658bc0be-b343-4964-a2b0-1c8fae8b5e18)
+![수동위치선택](https://github.com/user-attachments/assets/8600077d-7995-460c-9aa0-7f07c305baae)
+![팟참여](https://github.com/user-attachments/assets/13853863-4df5-44a3-be19-1f753d8a5b75)
+![나의팟](https://github.com/user-attachments/assets/c53c75c8-e6c8-4601-b05e-bd5b5c5e0464)
+![채팅방연동](https://github.com/user-attachments/assets/e2460de4-894c-4048-8cf0-59e833ac7027)
 
 </br>
 </br>
