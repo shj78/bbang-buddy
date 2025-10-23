@@ -1,0 +1,127 @@
+.naver_map h3 {
+  display: none !important;
+}
+
+.naver_map .map_wrap {
+  border-radius: 10px;
+}
+
+.potExplorer {
+  padding: 40px 40px 20px 40px;
+  gap: 40px;
+  display: flex;
+  background-color: white;
+  height: calc(100vh - 128px); /* 헤더 높이 제외 */
+  box-sizing: border-box;
+}
+
+.mapSection {
+  /* 반응형 flex 비율 설정 - width: 100% 제거 */
+  flex: 2.5; /* 기본값 (1920px 기준) */
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%; /* 전체 높이 사용 */
+}
+
+.potListPanel {
+  /* 고정 너비로 변경하여 mapSection이 나머지 공간을 차지하도록 함 */
+  width: 480px; /* 고정 너비 */
+  flex-shrink: 0; /* 축소 방지 */
+  height: 100%; /* 전체 높이 사용하여 mapSection과 동일한 높이 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 반응형 mapSection 조정 - 큰 화면에서 더 커지도록 */
+@media screen and (min-width: 1920px) {
+  .mapSection {
+    flex: 3; /* 큰 화면에서는 더 크게 */
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .mapSection {
+    flex: 4; /* 매우 큰 화면에서는 훨씬 크게 */
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .mapSection {
+    flex: 2.2; /* 작은 화면에서는 비율 줄임 */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mapSection {
+    flex: 2; /* 더 작은 화면에서는 더 줄임 */
+  }
+  .potListPanel {
+    width: 400px; /* 작은 화면에서는 패널 너비 축소 */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mapSection {
+    flex: 1.8;
+  }
+  .potListPanel {
+    width: 350px; /* 더 작은 화면에서는 패널 너비 더 축소 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .potExplorer {
+    flex-direction: column; /* 모바일에서는 세로 배치 */
+    gap: 20px; /* 모바일에서는 간격 줄임 */
+    padding: 20px;
+  }
+
+  .mapSection {
+    flex: none;
+    height: 50vh; /* 모바일에서는 고정 높이 */
+  }
+
+  .potListPanel {
+    flex: none;
+    min-width: auto;
+    max-width: auto;
+    height: auto;
+    width: auto;
+  }
+}
+
+.potListContent {
+  flex: 1; /* 남은 공간 모두 사용 */
+  overflow-y: auto; /* 내용이 많으면 스크롤 */
+  min-height: 0; /* flex 요소가 줄어들 수 있도록 */
+
+  /* 커스텀 스크롤바 스타일 (Webkit 브라우저) */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #f6f6f6 transparent; /* Firefox */
+}
+
+/* Webkit 브라우저 (Chrome, Safari, Edge) 스크롤바 스타일 */
+.potListContent::-webkit-scrollbar {
+  width: 6px; /* 스크롤바 너비 */
+}
+
+.potListContent::-webkit-scrollbar-track {
+  background: transparent; /* 트랙 배경 투명 */
+  border-radius: 10px;
+}
+
+.potListContent::-webkit-scrollbar-thumb {
+  background: #f6f6f6;
+  border-radius: 10px; /* 둥근 모서리 */
+  transition: background-color 0.2s ease; /* 부드러운 색상 전환 */
+}
+
+.potListContent::-webkit-scrollbar-thumb:hover {
+  background: #f3f3f3;
+}
+
+.buttonSection {
+  flex-shrink: 0; /* 버튼 섹션은 축소되지 않음 */
+  padding-top: 16px;
+  height: auto; /* 버튼 높이에 맞춰 자동 조정 */
+}
